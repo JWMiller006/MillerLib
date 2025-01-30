@@ -13,6 +13,8 @@ add_library(MillerLib STATIC
   src/MillerLib.c
   include/ProgramConnectors/SharedMemory.h
   src/ProgramConnectors/SharedMemory.c
+  include/Threading/MillerThreads.h
+  src/Threading/MillerThreads.c
 )
 
 # Create the main executable

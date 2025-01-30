@@ -28,6 +28,7 @@
  *  specific to this individual header
  */
 #include <stdio.h>
+#include <pthread.h>
 
 
 /*
@@ -48,6 +49,7 @@
 #define false 0
 #define true 1
 
+/* Shortcut for endline */
 #define ENDL() printf("\n")
 
 
@@ -57,9 +59,47 @@
  *  that are defined in the Miller Library Core
  */
  
+ 
 /* Returns true or false (1|0) verifying setup */
 bool isLibraryInitialized(void);
 
 
 
 #endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

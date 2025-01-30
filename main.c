@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <pthread.h>
 #include "include/MillerLib.h"
 #include "include/ProgramConnectors/SharedMemory.h"
 
-
+static bool running = false; 
 
 int main(void){
   int segment; 
@@ -11,13 +12,15 @@ int main(void){
   int ShmId;
   char in; 
   const char* file = "file.txt";
+  pthread_t* threads; 
   
   printf("\nHello World\n"); 
  	printf("Checking if the Library is initialized\n");
   
   isLibraryInitialized();
   
-  scanf("\nEnter the segment number: %d", &segment); 
+  printf("Enter the segment number: "); 
+  scanf("\n%d", &segment); 
   
   size = sizeof(long);  
   
@@ -25,9 +28,13 @@ int main(void){
   
   sharedMemory = AttachToSharedMemory(ShmId);
   
-  scanf("%c", &in); 
+  printf("Enter any character to continue... ");
+
+  scanf("\n%c", &in); 
   
   ReleaseSharedMemory(ShmId, sharedMemory); 
+  
+  
   
 	return 0; 
 }
