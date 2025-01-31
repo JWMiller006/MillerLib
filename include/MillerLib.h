@@ -29,36 +29,24 @@
  */
 #include <stdio.h>
 #include <pthread.h>
+#include <stddef.h> 
+#include <stdlib.h>
+#include <string.h>
 
 
 /*
- * Here I will include the rest of the library
+ * Includes for the primary library
  */
-
-
-/*
- * Here I will define specific macros that can
- *  be helpful shortcuts in day-to-day programming
- */
-
-/* 
- * Apparently C Standard 90 didn't have booleans, 
- *  so this is a workaround that should work
- */
-#define bool int
-#define false 0
-#define true 1
+#include "Threading/MillerThreads.h"
+#include "MillerTypeDef.h"
 
 /* Shortcut for endline */
 #define ENDL() printf("\n")
 
-
-
 /*
  * Here I will write the function signatures 
  *  that are defined in the Miller Library Core
- */
- 
+ */ 
  
 /* Returns true or false (1|0) verifying setup */
 bool isLibraryInitialized(void);

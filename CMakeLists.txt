@@ -7,14 +7,26 @@ project(MyProject)
 # Languages (Only C for this one)
 enable_language(C)
 
-# Create the library
-add_library(MillerLib STATIC 
+set(SOURCES 
   include/MillerLib.h
   src/MillerLib.c
+  include/MillerTypeDef.h
   include/ProgramConnectors/SharedMemory.h
   src/ProgramConnectors/SharedMemory.c
   include/Threading/MillerThreads.h
   src/Threading/MillerThreads.c
+  include/Structures/Array.h
+  src/Structures/Array.c
+)
+
+# Create the static library
+add_library(MillerLib STATIC 
+  ${SOURCES}
+)
+
+# Create the dynamic library
+add_library(MillerLibDyn SHARED
+  ${SOURCES}
 )
 
 # Create the main executable
@@ -23,4 +35,5 @@ add_executable(MyProject
 )
 
 # Add the library as a dependency to the executable
-target_link_libraries(MyProject MillerLib)
+target_link_libraries(MyProject MillerLibDyn)
+

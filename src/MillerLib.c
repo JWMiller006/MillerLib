@@ -9,3 +9,4 @@ bool isLibraryInitialized(void){
     return false; 
   #endif
 }
+
