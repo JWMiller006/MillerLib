@@ -14,6 +14,7 @@
 #include <stddef.h> 
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 #include "../MillerTypeDef.h"
 
 /* 
@@ -54,9 +55,14 @@ MArray CreateEmptyMArray(uint8_t length, uint8_t elementSize);
 /* Frees the memory used for the array */
 void ReleaseMArray(MArray** arr); 
 
+/* Resize the array buffer to the desired length */
+MArray MArrResize(MArray arr, uint8_t newBufferSize);
 
+/* Adds the item to the array */
+MArray MArrAppend(MArray arr, void* item, uint8_t itemSize);
 
-
+/* Returns a buffer of the specified item */
+void* MArrayGet(const MArray arr, const uint8_t index); 
 
 
 

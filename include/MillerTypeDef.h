@@ -40,6 +40,9 @@ typedef unsigned short bool;
 typedef struct {
   uint8_t itemLength; 
   uint8_t bufferLength; 
+  uint8_t bytesUsed; 
+  uint8_t currIndex; 
+  uint8_t maxIndex; 
   void* buffer; 
 } MArray; 
 
